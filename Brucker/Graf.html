@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      	#mynetwork {
+		width: 1400px;
+		height: 1200px;
+		border: 1px solid lightgray;
+	}
+    </style>
+  </head>
+  <body>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+      
+	var nodes = new vis.DataSet([
+		{id: 1, label: 'T1,3'},
+		{id: 2, label: 'T2,2'},
+		{id: 3, label: 'T3,15'},
+		{id: 4, label: 'T4,4'},
+		{id: 5, label: 'T5,10'},
+		{id: 6, label: 'T6,3'},
+		{id: 7, label: 'T7,2'},
+		{id: 8, label: 'T8,4'},
+		{id: 9, label: 'T9,2'},
+		{id: 10, label: 'T10,4'},
+		{id: 11, label: 'T11,6'},
+		{id: 12, label: 'T12,3'},
+		{id: 13, label: 'T13,8'},
+		{id: 14, label: 'T14,10'},
+	]);
+      
+	var edges = new vis.DataSet([
+		{from: 1, to: 4, arrows: 'to'},
+		{from: 2, to: 5, arrows: 'to'},
+		{from: 3, to: 6, arrows: 'to'},
+		{from: 4, to: 8, arrows: 'to'},
+		{from: 5, to: 8, arrows: 'to'},
+		{from: 6, to: 10, arrows: 'to'},
+		{from: 7, to: 10, arrows: 'to'},
+		{from: 8, to: 11, arrows: 'to'},
+		{from: 9, to: 12, arrows: 'to'},
+		{from: 10, to: 13, arrows: 'to'},
+		{from: 11, to: 14, arrows: 'to'},
+		{from: 12, to: 14, arrows: 'to'},
+		{from: 13, to: 14, arrows: 'to'},
+	]);
+      
+	var container = document.getElementById('mynetwork');
+      
+	var data = {
+		 nodes: nodes, 
+		 edges: edges,
+	};
+      
+	var options = {};
+      
+	var network = new vis.Network(container, data, options);
+    </script>
+  </body>
+</html>
